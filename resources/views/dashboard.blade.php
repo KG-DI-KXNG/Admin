@@ -250,9 +250,9 @@
 				<!-- Card -->
 
 				
-
+@livewireStyles
 				@livewire('admin-dash')
-
+@livewireScripts
 			</div>
 
 
