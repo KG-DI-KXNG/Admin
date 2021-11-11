@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Course;
+use App\Models\Schedule;
+use App\Models\Teacher;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -29,10 +32,15 @@ class AdminDash extends Component
         $this->edit = User::find($value)->name;
         $this->name = User::find($value)->name;
         $this->email = User::find($value)->email;
+
+        
     }
 
     public function deleteUser($id){
         User::destroy($id);
+        $teacherid = Teacher::where('user_id', $id)->delete();
+        $courseid = Course::where('teacher_id', $teacherid)->delete();
+        Schedule::where('teacher_id', $teacherid)->orWhere('course_id', $courseid)->delete();
     }
     public function changeInfo($value){
         $this->validate([

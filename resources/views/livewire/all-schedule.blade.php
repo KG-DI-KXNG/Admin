@@ -8,7 +8,7 @@
           <h3 class="font-semibold text-base text-blueGray-700">Class Schedule</h3>
         </div>
         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-          <button onclick="document.getElementById('scheduleCreatea').click();" class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Add New Schedule</button>
+          <button onclick="document.getElementById('scheduleCreate').click();" class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Add New Schedule</button>
         </div>
       </div>
     </div>

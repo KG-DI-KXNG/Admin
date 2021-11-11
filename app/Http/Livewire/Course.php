@@ -16,6 +16,7 @@ class Course extends Component
     {
         $teachers = Teacher::with('user')->get();
         $course = ModelsCourse::with('teacher')->get()->toArray();
+        // dd($course);
         return view('livewire.course',['teachers'=>$teachers, 'courses'=>$course]);
     }
 

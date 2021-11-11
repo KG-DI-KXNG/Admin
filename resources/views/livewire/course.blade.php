@@ -21,7 +21,7 @@
                           <option hidden selected>--Select Type--</option>
                           @foreach ($teachers as $teacher)
                           
-                            <option value="{{$teacher->id}}">{{$teacher->user->name}}</option>
+                            <option value="{{$teacher->id}}">{{$teacher->user->name ?? "Dummy"}}</option>
                           @endforeach
                    
                             </select>

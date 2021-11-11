@@ -43,7 +43,7 @@ class EditStudent extends Component
         $user->name = $this->name;
         $user->email = $this->email;
         $user->user_type = $this->usertype;
-        $user->password = Hash::make($this->name);
+        $user->password = Hash::make($this->password);
         $user->save();
 
         if ($this->usertype === "0"){
