@@ -30,6 +30,10 @@ class AdminDash extends Component
         $this->name = User::find($value)->name;
         $this->email = User::find($value)->email;
     }
+
+    public function deleteUser($id){
+        User::destroy($id);
+    }
     public function changeInfo($value){
         $this->validate([
             'name'=>"required",

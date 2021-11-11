@@ -23,9 +23,9 @@
             
             
             </td>
-            <td><button value="{{$user->id}}" wire:click="editUser($event.target.value)">Edit</button> </td>
+            <td><button class="no-underline hover:underline hover:text-blue-600" value="{{$user->id}}" wire:click="editUser($event.target.value)">Edit</button> </td>
             <td>view</td>
-            <td>delete</td>
+            <td><button class="no-underline hover:underline hover:text-red-500" value="{{$user->id}}" wire:click="deleteUser($event.target.value)">Delete</button></td>
         </tr>
         @endforeach
         @if ($edit)
