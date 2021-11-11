@@ -31,13 +31,14 @@ Route::get('/logout', function(Request $request){
 
 Route::view('login', 'login')->name('login');
 Route::view('register', 'register')->name('register');
-Route::middleware('rerouting')->group(function(){
+Route::middleware('rerouting', 'auth')->group(function(){
 Route::get('dashboard',[StudentController::class, 'dashboard'])->name('dashboard');
 
 Route::view('addstudent', 'addstudent')->name('student');
 
 Route::view('schedule', 'schedule')->name('schedule');
 Route::view('course', 'schedule')->name('course');
+Route::view('add-schedule', 'schedule')->name('allSchedule');
 });
 Route::view('teacher', 'teacher')->name('teacher');
 Route::view('student', 'student');

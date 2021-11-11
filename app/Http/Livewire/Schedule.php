@@ -40,11 +40,11 @@ class Schedule extends Component
     public function submit(){
         $this->validate();
         
-        $count = ModelsSchedule::where('teacher_id', $this->teacher)->where('group_id', $this->group)->where('s_time', $this->starttime)->count();
+        $count = ModelsSchedule::where('user_id', $this->teacher)->where('group_id', $this->group)->where('s_time', $this->starttime)->count();
         // dd($count);
         if (!$count){
         $s = new ModelsSchedule();
-        $s->teacher_id = $this->teacher;
+        $s->user_id = $this->teacher;
         $s->course_id = $this->courses;
         $s->group_id = $this->group;
         $s->s_time = $this->starttime;

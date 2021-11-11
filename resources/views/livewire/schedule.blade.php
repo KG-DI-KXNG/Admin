@@ -1,8 +1,8 @@
-<div>
+<div class="w-full">
   @if(session('error'))
     <div class="container bg-green-300 text-black text-center text-2xl p-2 ">{{session('error')}}</div>
     @endif
-    <div class="bg-gray-100 flex mt-8">
+    <div class=" bg-gray-50 flex ">
         <div class="container mx-auto max-w-md shadow-md hover:shadow-lg transition duration-300">
           <div class="py-12 p-10 bg-white rounded-xl">
             <div class="mb-6">
@@ -75,7 +75,13 @@
 
               <div class="">
                 <label class="mr-4 text-gray-700 font-bold inline-block mb-2" for="name">Date</label>
-            <input type="date" min="{{date('Y-m-d', strtotime('+1 day'))}}" wire:model="date" class="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded">
+            <select wire:model="date" class="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded">
+              <option value="monday">Monday </option>
+              <option value="tuesday">Tuesday </option>
+              <option value="wednesday">Wenesday </option>
+              <option value="thursday">Thursday </option>
+              <option value="friday">Friday </option>
+            </select>
                    
                   <span class="text-red-500">@error('date'){{ $message }}@enderror</span>
               </div>

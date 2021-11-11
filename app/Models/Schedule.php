@@ -10,12 +10,17 @@ class Schedule extends Model
     use HasFactory;
 
     public function course(){
-        return $this->hasMany(Course::class);
+        return $this->belongsTo(Course::class);
     }
     public function teacher(){
-        return $this->hasMany(Teacher::class);
+        return $this->belongsTo(User::class, "user_id", "id");
     }
     public function group(){
-        return $this->hasMany(Group::class);
+        return $this->belongsTo(Group::class);
+    }
+
+    public function getDateAttribute($value)
+    {
+        return ucfirst($value);
     }
 }

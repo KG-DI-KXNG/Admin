@@ -3,7 +3,7 @@
     
           <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 class="font-semibold text-base text-blueGray-700">Page Visits</h3>
+              <h3 class="font-semibold text-base text-blueGray-700">Class Schedule</h3>
             </div>
             <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
               <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">See all</button>
@@ -16,7 +16,7 @@
             <thead>
               <tr>
                 <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                              Course
+                              Course Session
                             </th>
               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                 Group
@@ -24,23 +24,26 @@
                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                               Class Time
                             </th>
+              <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            Class Day
+                            </th>
              
               </tr>
             </thead>
     
             <tbody>
                 {{-- {{dd($student)}} --}}
-               {{-- @forelse ($s as $schedule) --}}
+               @forelse ($schedules as $schedule)
                
                <tr>
                 <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                    {{-- {{$schedule->name}} --}} Maths
+                  {{$schedule->course->course_nm}} 
                 </th>
                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                    {{-- {{$schedule->group_nm}} --}}A1
+                  {{$schedule->group->group_nm}} 
                 </td>
                 <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{-- @php
+                    @php
                        $return_value = match ($schedule->s_time) {
                         '1' => '1:00',
                         '2' => '2:00',
@@ -62,18 +65,18 @@
                     echo $return_value." to ".$return_value1;
 
 
-                    @endphp --}}
-                    4:00 to 5:00
+                    @endphp
+
                 </td>
-                {{-- <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{--$schedule->date}}</td>
-                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+               <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{$schedule->date}}</td>
+                {{-- <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  {{$schedule->course_nm}}
-                </td> --}}
+                  {{$schedule->date}}
+                </td>  --}}
               </tr>
-               {{-- @empty
+                @empty
                    <td colspan="4">No Available Class</td>
-               @endforelse --}}
+               @endforelse 
               
               
             </tbody>

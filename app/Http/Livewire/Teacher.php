@@ -12,7 +12,7 @@ class Teacher extends Component
 
     public function render()
     {
-       
-        return view('livewire.teacher');
+       $schedule = Schedule::where('user_id', Auth::id())->get();
+        return view('livewire.teacher',['schedules'=>$schedule]);
     }
 }

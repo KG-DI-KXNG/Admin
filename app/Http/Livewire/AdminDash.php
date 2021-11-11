@@ -33,7 +33,7 @@ class AdminDash extends Component
     public function changeInfo($value){
         $this->validate([
             'name'=>"required",
-            'email'=>"email|unique:users,email",
+            'email'=>"email|unique:users,email,".$value,
         ],[
             'name.required'=>"Name Cannot be empty",
         ]

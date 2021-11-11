@@ -1,15 +1,10 @@
-<div class="p-6">
- 
-
-
-
-
+<div class="w-full ">
 
   <div class=>
     @if(session('error'))
       <div class="container bg-green-300 text-black text-center text-2xl p-2 ">{{session('error')}}</div>
       @endif
-      <div class="bg-gray-100 flex mt-8 p-6">
+      <div class=" flex bg-gray-50 p-6">
           <div class="container mx-auto max-w-md shadow-md hover:shadow-lg transition duration-300">
             <div class="py-12 p-10 bg-white rounded-xl">
               <div class="mb-6">
